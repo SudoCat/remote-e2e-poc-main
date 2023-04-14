@@ -5,9 +5,11 @@ on:
       SUB_APP_URL:
         description: “Sub app URL”
         required: true
+        default: ${{ vars.SUB_APP_URL }}
       MAIN_APP_URL:
         description: “Main app URL”
         required: true
+        default: ${{ vars.MAIN_APP_URL }}
 jobs:
   test:
     timeout-minutes: 60
