@@ -1,12 +1,13 @@
 name: Playwright Tests Manual
 
-inputs:
- SUB_APP_URL:
-   description: “Sub app URL”
-   required: true
- MAIN_APP_URL:
-   description: “Main app URL”
-   required: true
+on: workflow_dispatch
+  inputs:
+    SUB_APP_URL:
+      description: “Sub app URL”
+      required: true
+    MAIN_APP_URL:
+      description: “Main app URL”
+      required: true
 
 jobs:
   test:
