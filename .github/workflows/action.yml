@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with: 
+        repository: SudoCat/remote-e2e-poc-main
     - uses: actions/setup-node@v3
       with:
         node-version: 16
