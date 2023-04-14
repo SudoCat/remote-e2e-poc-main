@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:proxy": "node server.js"
+    "e2e": "node server.js & playwright test"
   },
   "keywords": [],
   "author": "",

@@ -22,13 +22,11 @@ jobs:
       run: pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
       run: pnpx playwright install --with-deps
-    - name: Start services
-      run: pnpm start:proxy
+    - name: Run Playwright tests
+      run: pnpm turbo e2e
       env:
         SUB_APP_URL: ${{ inputs.SUB_APP_URL }}
         MAIN_APP_URL: ${{ inputs.MAIN_APP_URL }}
-    - name: Run Playwright tests
-      run: pnpx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
