@@ -4,17 +4,21 @@ on:
     inputs:
       SUB_APP_URL:
         description: “Sub app URL”
+        type: string
         required: true
       MAIN_APP_URL:
         description: “Main app URL”
+        type: string
         required: true
   workflow_call:
     inputs:
       SUB_APP_URL:
         description: “Sub app URL”
+        type: string
         required: true
       MAIN_APP_URL:
         description: “Main app URL”
+        type: string
         required: true
 jobs:
   test:
