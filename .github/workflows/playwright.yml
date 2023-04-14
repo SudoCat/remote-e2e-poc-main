@@ -1,11 +1,13 @@
 name: Playwright Tests
 on:
+  deployment_status:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
   test:
+    # if: github.event.deployment_status.state == 'success'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +21,10 @@ jobs:
       run: pnpx playwright install --with-deps
     - name: Start services
       run: pnpm start:proxy
-      // start the local app (Whichever that is)
-      // start the proxy server
+      
+      # env:
+      # start the local app (Whichever that is)
+      # start the proxy server
     - name: Run Playwright tests
       run: pnpx playwright test
     - uses: actions/upload-artifact@v3
