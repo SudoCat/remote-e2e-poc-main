@@ -9,13 +9,8 @@ on:
 
 jobs:
   test:
-   if: ${{ github.event.deployment_status.state == 'success' }}
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v1
-       with:
-         ref: 'main'
-     - uses: ./.github/workflows/action.yml
-       with:
-         SUB_APP_URL: ${{ vars.SUB_APP_URL }}
-         MAIN_APP_URL: ${{ github.event.deployment_status.target_url }}
+    if: ${{ github.event.deployment_status.state == 'success' }}
+    uses: ./.github/workflows/action.yml
+    with:
+      SUB_APP_URL: ${{ vars.SUB_APP_URL }}
+      MAIN_APP_URL: ${{ github.event.deployment_status.target_url }}
