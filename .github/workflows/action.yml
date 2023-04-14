@@ -1,5 +1,4 @@
 name: Playwright Tests Manual
-
 on: workflow_dispatch
   inputs:
     SUB_APP_URL:
@@ -8,7 +7,6 @@ on: workflow_dispatch
     MAIN_APP_URL:
       description: “Main app URL”
       required: true
-
 jobs:
   test:
     timeout-minutes: 60
