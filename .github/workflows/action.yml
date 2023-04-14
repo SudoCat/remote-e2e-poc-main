@@ -19,7 +19,7 @@ jobs:
         node-version: 16
     - uses: pnpm/action-setup@v2
     - name: Install dependencies
-      run: pnpm ci
+      run: pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
       run: pnpx playwright install --with-deps
     - name: Start services
