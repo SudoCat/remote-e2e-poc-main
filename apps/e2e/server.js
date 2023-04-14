@@ -5,8 +5,8 @@ var debug = require('debug')('remote-e2e-poc-sub:server');
 
 const app = express()
 
-app.use('/sub', proxy(process.env.SUB_APP_URL || 'http://localhost:3030'))
-app.use('/', proxy(process.env.MAIN_APP_URL || 'http://localhost:3000'))
+app.use('/sub', proxy(process.env.SUB_APP_URL || 'https://remote-e2e-poc-sub.vercel.app/'))
+app.use('/', proxy(process.env.MAIN_APP_URL || 'https://remote-e2e-poc-main.vercel.app/'))
 
 const port = process.env.PORT || '3060';
 app.set('port', port);
